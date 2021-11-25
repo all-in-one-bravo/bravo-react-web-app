@@ -8,6 +8,7 @@
 
 ### `yarn start`
 
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -45,3 +46,8 @@ Note: If you encounter a timeout error, try to re-run the script.
 Builds the app for production to the `build` folder.\
 The build is minified and the filenames include the hashes.\
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn lint`
+
+A tool for identifying and reporting on code smells and patterns, that makes more consistent code and avoids bugs.
+Linting is run on pre-commit automatically.
