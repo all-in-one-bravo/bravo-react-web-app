@@ -1,0 +1,6 @@
+**/node_modules/
+
+**/*.test.js
+
+**/dist/
+/src/modules/template-engine/client/lib/

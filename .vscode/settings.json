@@ -1,0 +1,10 @@
+{
+  /* -------------- Prettier */
+  "prettier.trailingComma": "es5",
+
+  /* -------------- VSCode setting */
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
