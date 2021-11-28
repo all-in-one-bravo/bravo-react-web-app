@@ -1,4 +1,4 @@
-import "./Message.css";
+import './Message.css'
 
 function Message() {
   return (
@@ -13,7 +13,7 @@ function Message() {
         All - In - One Bravo
       </a>
     </div>
-  );
+  )
 }
 
-export default Message;
+export default Message

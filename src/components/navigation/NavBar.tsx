@@ -1,11 +1,12 @@
-import "./NavBar.css";
+import './NavBar.css'
+import image from 'assets/logo.svg'
 
 function NavBar() {
   return (
     <header>
       <nav className="nav collapsible">
         <a className="nav__brand" href="/">
-          <img src="images/logo.svg" alt="" />
+          <img src={image} alt="" />
         </a>
         <svg className="icon icon--white nav__toggler">
           <use href="images/sprite.svg#menu"></use>
@@ -26,7 +27,7 @@ function NavBar() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }
 
-export default NavBar;
+export default NavBar

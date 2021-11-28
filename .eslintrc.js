@@ -1,25 +1,36 @@
 module.exports = {
-  env: {
-    es6: true,
-    node: true,
-    'jest/globals': true,
-  },
-  extends: 'eslint:recommended',
+  extends: [
+    'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors.
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
     sourceType: 'module',
+    ecmaVersion: 2020,
+    ecmaFeatures: {
+      jsx: true, // Allows for the parsing of JSX
+    },
   },
-  plugins: ['jest'],
+  plugins: ['@typescript-eslint', 'react-hooks'],
+  settings: {
+    react: {
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+  },
+  // Fine tune rules
   rules: {
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'never'],
-    // TODO: Remove this rules after the ecubation
-    'no-console': ['off'],
-  },
-  globals: {
-    window: true,
-    document: true,
-    XMLHttpRequest: true,
+    '@typescript-eslint/no-var-requires': 0,
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    // suppress errors for missing 'import React' in files
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/no-unescaped-entities': 0,
+    // allow jsx syntax in js files (for next.js project)
+    'react/jsx-filename-extension': [
+      1,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
   },
 }

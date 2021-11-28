@@ -51,3 +51,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 A tool for identifying and reporting on code smells and patterns, that makes more consistent code and avoids bugs.
 Linting is run on pre-commit automatically.
+
+### Module Resolver
+
+Modify ALIAS in `scriptRule.js` to setup alias for relative paths.
+For example: import Home from '../../pages/Home' => import Home from 'pages/Home'
