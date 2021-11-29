@@ -21,6 +21,7 @@ const babelLoaders = [
             alias: ALIAS,
           },
         ],
+        'babel-plugin-styled-components',
       ],
       presets: [
         '@babel/preset-env',

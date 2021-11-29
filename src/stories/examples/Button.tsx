@@ -1,5 +1,7 @@
 import React from 'react'
 import './button.css'
+import styled from 'styled-components'
+import MuiButton from '@mui/material/Button'
 
 interface ButtonProps {
   /**
@@ -24,6 +26,21 @@ interface ButtonProps {
   onClick?: () => void
 }
 
+export const StyledButton = styled(MuiButton)`
+  background-color: #0047ab;
+  font-style: normal;
+  font-family: 'Barlow';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+
+  &:hover {
+    background-color: #000080;
+  }
+`
+
 /**
  * Primary UI component for user interaction
  */
@@ -38,15 +55,13 @@ export const Button = ({
     ? 'storybook-button--primary'
     : 'storybook-button--secondary'
   return (
-    <button
-      type="button"
+    <StyledButton
+      onClick={props.onClick}
       className={['storybook-button', `storybook-button--${size}`, mode].join(
         ' '
       )}
-      style={{ backgroundColor }}
-      {...props}
     >
       {label}
-    </button>
+    </StyledButton>
   )
 }

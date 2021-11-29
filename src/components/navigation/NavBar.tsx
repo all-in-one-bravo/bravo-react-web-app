@@ -1,5 +1,6 @@
 import './NavBar.css'
 import image from 'assets/logo.svg'
+import { Button } from 'stories/examples/Button'
 
 function NavBar() {
   return (
@@ -21,9 +22,7 @@ function NavBar() {
           <li className="nav__item">
             <a href="#">Payment Method</a>
           </li>
-          <li className="nav__item">
-            <a href="#">Login</a>
-          </li>
+          <Button size="small" label="Log in" />
         </ul>
       </nav>
     </header>
