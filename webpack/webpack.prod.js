@@ -1,14 +1,14 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { merge } = require('webpack-merge')
+const { merge } = require('webpack-merge');
 
-const baseConfig = require('./webpack.base')
+const baseConfig = require('./webpack.base');
 
-const { resolveDistDir } = require('./utils/resolvePath')
+const { resolveDistDir } = require('./utils/resolvePath');
 
-const paths = require('./utils/paths')
+const paths = require('./utils/paths');
 
-process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'production';
 
 const prodConfig = {
   mode: 'production',
@@ -24,6 +24,6 @@ const prodConfig = {
     path: resolveDistDir,
   },
   plugins: [new MiniCssExtractPlugin()],
-}
+};
 
-module.exports = merge(baseConfig, prodConfig)
+module.exports = merge(baseConfig, prodConfig);

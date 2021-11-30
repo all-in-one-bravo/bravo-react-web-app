@@ -1,6 +1,6 @@
-import './NavBar.css'
-import image from 'assets/logo.svg'
-import { Button } from 'stories/examples/Button'
+import './NavBar.css';
+import image from 'assets/logo.svg';
+import { Button } from 'stories/examples/Button';
 
 function NavBar() {
   return (
@@ -26,7 +26,7 @@ function NavBar() {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

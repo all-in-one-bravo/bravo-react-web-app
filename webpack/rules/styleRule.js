@@ -1,10 +1,6 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const getStyleLoaders = ({
-  isEnvDev = false,
-  isEnvProd = false,
-  shouldUseSourceMap = false,
-}) =>
+const getStyleLoaders = ({ isEnvDev = false, isEnvProd = false, shouldUseSourceMap = false }) =>
   [
     isEnvDev && 'style-loader',
     isEnvProd && {
@@ -18,16 +14,12 @@ const getStyleLoaders = ({
         sourceMap: shouldUseSourceMap,
       },
     },
-  ].filter(Boolean)
+  ].filter(Boolean);
 
-const getStyleRule = ({
-  isEnvDev = false,
-  isEnvProd = false,
-  shouldUseSourceMap = false,
-}) => ({
+const getStyleRule = ({ isEnvDev = false, isEnvProd = false, shouldUseSourceMap = false }) => ({
   test: /\.css$/,
   exclude: /node_modules/,
   use: getStyleLoaders({ isEnvDev, isEnvProd, shouldUseSourceMap }),
-})
+});
 
-module.exports = { getStyleRule }
+module.exports = { getStyleRule };

@@ -1,12 +1,12 @@
-const { merge } = require('webpack-merge')
+const { merge } = require('webpack-merge');
 
-const baseConfig = require('./webpack.base')
+const baseConfig = require('./webpack.base');
 
-const { resolveDistDevDir } = require('./utils/resolvePath')
+const { resolveDistDevDir } = require('./utils/resolvePath');
 
-const paths = require('./utils/paths')
+const paths = require('./utils/paths');
 
-process.env.NODE_ENV = 'development'
+process.env.NODE_ENV = 'development';
 
 const devConfig = {
   mode: 'development',
@@ -20,5 +20,5 @@ const devConfig = {
     hot: true,
     port: 9000,
   },
-}
-module.exports = merge(baseConfig, devConfig)
+};
+module.exports = merge(baseConfig, devConfig);

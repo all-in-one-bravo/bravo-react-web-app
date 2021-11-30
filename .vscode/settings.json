@@ -1,6 +1,6 @@
 {
   /* -------------- Prettier */
-  "prettier.trailingComma": "es5",
+  "prettier.trailingComma": "all",
 
   /* -------------- VSCode setting */
   "editor.formatOnSave": true,

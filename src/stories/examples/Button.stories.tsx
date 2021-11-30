@@ -1,41 +1,48 @@
-import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import React from 'react';
+import { Meta, ComponentStory } from '@storybook/react';
+import { screen } from '@testing-library/dom';
+import userEvent from '@testing-library/user-event';
+import { Button } from './Button';
 
-import { Button } from './Button'
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  title: 'Examples / Button',
+  argTypes: { onClick: { action: 'click ' } },
+} as Meta;
+
+export const WithArgs: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+WithArgs.args = { label: 'With args' };
+
+export const Basic = () => <Button label="Click me" />;
+
+export const StoryObject = {
+  render: () => <>hahaha</>,
+};
+
+export const StoryNoRender = {
+  args: { label: 'magic!' },
+};
+
+export const StoryWithPlay = {
+  args: { label: 'play' },
+  play: () => {
+    console.log('play!!');
+    userEvent.click(screen.getByRole('button'));
   },
-} as ComponentMeta<typeof Button>
+};
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+export const CSF2StoryWithPlay = WithArgs.bind({});
+CSF2StoryWithPlay.play = () => {
+  console.log('play!!');
+  userEvent.click(screen.getByRole('button'));
+};
 
-export const Primary = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
-}
-
-export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'Button',
-}
-
-export const Large = Template.bind({})
-Large.args = {
-  size: 'large',
-  label: 'Button',
-}
-
-export const Small = Template.bind({})
-Small.args = {
-  size: 'small',
-  label: 'Button',
-}
+// eslint-disable-next-line no-underscore-dangle
+export const __namedExportsOrder = [
+  'Basic',
+  'WithArgs',
+  'StoryObject',
+  'StoryNoRender',
+  'StoryWithPlay',
+  'CSF2StoryWithPlay',
+];

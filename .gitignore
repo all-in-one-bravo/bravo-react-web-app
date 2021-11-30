@@ -11,6 +11,10 @@
 # production
 /build
 /public
+/dist
+
+# dev
+/dist-dev
 
 # misc
 .DS_Store
@@ -29,3 +33,6 @@ yarn-error.log*
 
 #babel
 /babel-cache
+
+#storybook
+/storybook-static

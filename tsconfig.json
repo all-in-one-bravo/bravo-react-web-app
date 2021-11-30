@@ -30,6 +30,7 @@
   },
   "include": [
     "src",
+    ".storybook/main.ts"
   ],
   "exclude": [
     "node_modules"

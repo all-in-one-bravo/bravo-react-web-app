@@ -1,12 +1,12 @@
-const { resolve } = require('path')
-const pathsPath = resolve(__dirname, '../../webpack/utils/paths')
-const paths = require(pathsPath)
+const { resolve } = require('path');
+const pathsPath = resolve(__dirname, '../../webpack/utils/paths');
+const paths = require(pathsPath);
 const ALIAS = {
   pages: paths.srcPages,
   assets: paths.srcAssets,
   stories: paths.srcStories,
   components: paths.srcComponents,
-}
+};
 
 const babelLoaders = [
   {
@@ -23,11 +23,7 @@ const babelLoaders = [
         ],
         'babel-plugin-styled-components',
       ],
-      presets: [
-        '@babel/preset-env',
-        '@babel/preset-react',
-        '@babel/preset-typescript',
-      ],
+      presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
       env: {
         production: {
           presets: ['minify'],
@@ -38,12 +34,12 @@ const babelLoaders = [
       cacheDirectory: paths.babelCacheDir,
     },
   },
-]
+];
 
 const getJavascriptRule = () => ({
   test: [/\.jsx?$/, /\.tsx?$/],
   exclude: /(node_modules)/,
   use: [...babelLoaders],
-})
+});
 
-module.exports = { getJavascriptRule }
+module.exports = { getJavascriptRule };
