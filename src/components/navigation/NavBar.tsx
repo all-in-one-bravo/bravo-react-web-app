@@ -22,7 +22,7 @@ function NavBar() {
           <li className="nav__item">
             <a href="#">Payment Method</a>
           </li>
-          <Button size="small" label="Log in" />
+          <Button size="small" label="Log out" />
         </ul>
       </nav>
     </header>

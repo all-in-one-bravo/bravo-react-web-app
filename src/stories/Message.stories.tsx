@@ -1,4 +1,4 @@
-import Message from '../components/content/Message';
+import Message from 'components/content/Message';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

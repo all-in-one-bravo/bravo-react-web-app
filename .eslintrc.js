@@ -55,6 +55,19 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
+    'no-restricted-imports': [
+      // Ensure that objects are consistently imported from the macro across your project. https://styled-components.com/docs/tooling
+      'error',
+      {
+        paths: [
+          {
+            name: 'styled-components',
+            message: 'Please import from styled-components/macro.',
+          },
+        ],
+        patterns: ['!styled-components/macro'],
+      },
+    ],
   },
   env: {
     browser: true,

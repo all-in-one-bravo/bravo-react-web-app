@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from '../components/navigation/NavBar';
+import NavBar from 'components/navigation/NavBar';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
